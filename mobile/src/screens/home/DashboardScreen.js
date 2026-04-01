@@ -132,7 +132,7 @@ export default function DashboardScreen({ navigation }) {
           <Image
             source={{ uri: item.sample_photo_url }}
             style={styles.foodImage}
-            defaultSource={require('../../assets/placeholder.png')}
+            defaultSource={require('../../assets/placeholder.jpg')}
           />
           <View style={styles.imageBadgeRow}>
             <View style={styles.sampleBadge}>

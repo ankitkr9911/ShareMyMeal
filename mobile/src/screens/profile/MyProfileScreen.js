@@ -10,7 +10,7 @@ import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar, Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect, CommonActions } from '@react-navigation/native';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../config/firebase';
 import { authAPI } from '../../services/api';
@@ -66,7 +66,12 @@ export default function MyProfileScreen({ navigation }) {
           onPress: async () => {
             try {
               await signOut(auth);
-              navigation.reset({ index: 0, routes: [{ name: 'Welcome' }] });
+              navigation.dispatch(
+                CommonActions.reset({
+                  index: 0,
+                  routes: [{ name: 'Welcome' }],
+                })
+              );
             } catch (error) {
               console.error('Logout error:', error);
               Alert.alert('Error', 'Failed to log out.');

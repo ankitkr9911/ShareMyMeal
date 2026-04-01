@@ -9,7 +9,7 @@ import axios from 'axios';
 import { auth } from '../config/firebase';
 
 // Base URL — update to your machine's IP for physical device testing
-const API_BASE_URL = 'http://192.168.0.105:8000';
+const API_BASE_URL = 'https://sharemymeal-3so4.onrender.com';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
